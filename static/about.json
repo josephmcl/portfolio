@@ -1,0 +1,13 @@
+[{
+    "type":"paragraph",
+    "title":"Hello",
+    "body":"My name is Joseph. I’m a software engineer and graduate student, currently working on my Master's in Computer and Information Science at The University of Oregon."
+},{
+"type":"paragraph",
+    "title":null,
+    "body":"I have a lot of interests surrounding Accessibility, Interaction Design, and Programming Language Design. More on that later. Between my coursework I've been developing a <i>super</i> cool dynamic recipe builder that I'm calling Brulée. And when I get a break from that I'm reading through <a href='https://www.goodreads.com/book/show/44735.The_Elements_of_Typographic_Style'><i>The Elements of Typographic Style</i></a> and <a href='https://www.goodreads.com/book/show/29.The_Mother_Tongue'><i>The Mother Tongue</i></a>."
+},{
+"type":"paragraph",
+    "title":null,
+    "body":"Any other spare time I have I'm dedicating to working on my Peugot 12-speed, cooking, or sleeping (ngl.)"
+}]

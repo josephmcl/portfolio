@@ -1,0 +1,53 @@
+<!DOCTYPE html5>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Joseph</title>
+  <meta name="description" content="A great portfolio for this guy named Joseph">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <meta name="author" content="Joseph McLaughlin">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='default.css', version='3.06') }}">
+  <script src="{{ url_for('static', filename='default.js', version='9.08') }}" defer></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="menu">
+      <a href="#projects" id="projects" data-after="🔧">Projects</a>
+      <a href="#doings" id="doings" data-after="📚">Doings</a>
+      <a href="#about" id="about" data-after="☕️">About</a>
+    </div>
+    <div class="title">
+		<div class="pulsar">
+            <button>
+            	<span data-after="🍰"></span>
+            </button>
+     	</div>
+      Joseph<br>MᶜLaughlin
+    </div>
+    <div class="mini">
+      <span>joseph mclaughlin</span>
+      <span>eugene, or, usa</span>
+      <br>
+      <a href="https://www.github.com/josephmcl">
+          <img src="{{ url_for('static', filename='github.png') }}">
+      </a>
+      <a href="https://www.linkedin.com/in/josephmcl">
+          <img src="{{ url_for('static', filename='linkedin.png') }}">
+      </a>
+      <a href="https://www.twitter.com/JosephMcL_">
+          <img src="{{ url_for('static', filename='twitter.png') }}">
+      </a>
+      <span>
+        josephmcl<span>(at)</span><wbr>protonmail<span>(dot)</span>ch
+      </span>
+    </div>
+    <div class="content" id="content">
+    </div>
+  </div>
+</body>
+</html>
+
