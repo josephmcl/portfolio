@@ -1,41 +1,11 @@
+import { Content } from './content.js';
+
 const projects = document.getElementById('projects');
 const doings = document.getElementById('doings');
 const about = document.getElementById('about');
 
-const content = {
-    obj: document.getElementById('content'),
-    add: (item) => {
-        content.obj.innerHTML += item;
-    },
-    clear : () => {
-        content.obj.innerHTML = '';
-    },
-    addSection: (item) => {
-        switch (item['type']) {
-        case 'paragraph': content.addParagraph(item);
-        }
-    },
-    addParagraph: (item) => {
-        let obj = document.createElement('div');
-        obj.classList.add('paragraph-section');
+const content = Content('content');
 
-        if (item['title']) {
-            let titleElement = document.createElement('div');
-            titleElement.classList.add('section-title');
-            titleElement.innerHTML = item['title'];
-            obj.appendChild(titleElement);
-        }
-
-        if (item['body']) {
-            let bodyElement = document.createElement('div');
-            bodyElement.classList.add('section-body');
-            bodyElement.innerHTML = item['body'];
-            obj.appendChild(bodyElement);
-        }
-
-        content.obj.appendChild(obj);
-    }
-};
 projects.addEventListener('mouseover', (e) => {
 	projects.setAttribute('data-after', randomElement(projectsEmojis));
 });
@@ -57,14 +27,13 @@ const projectsEmojis = ['🔨', '💪', '💻', '⚙', '🔧'];
 const doingsEmojis   = ['⚽', '🥘', '🏃‍♂️', '📚', '🎮'];
 const aboutEmojis    = ['👨', '💎', '😎', '😄', '☕️'];
 
-window.addEventListener("hashchange", function () {
-    window.scrollTo(window.scrollX, 0);
-    switch(window.location.hash) {
+const loadSection = (hash) => {
+    switch(hash) {
     case '#projects':
-        // getProjects();
+        getSectionData('static/projects.json');
         return;
     case '#doings':
-        // getEverythingElse();
+        getSectionData('static/doings.json');
         return;
     case '#about':
         getSectionData('static/about.json');
@@ -72,22 +41,15 @@ window.addEventListener("hashchange", function () {
     default:
         return;
     }
+}
+
+window.addEventListener("hashchange", function () {
+    window.scrollTo(window.scrollX, 0);
+    loadSection(window.location.hash);
 });
 
 window.addEventListener('load', () => {
-    switch(window.location.hash) {
-    case '#projects':
-        // getProjects();
-        return;
-    case '#doings':
-        // getEverythingElse();
-        return;
-    case '#about':
-        getSectionData('static/about.json');
-        return;
-    default:
-        return;
-    }
+    loadSection(window.location.hash);
 });
 
 const loadInfo = (fileName) => {
@@ -113,6 +75,7 @@ const getJSON = async (fileName, res, rej) => {
 const getSectionData = (path) => {
     loadInfo(path).then(json => {
         content.clear();
+        console.log(json);
         [...JSON.parse(json)].forEach(section => {
             content.addSection(section);
         });

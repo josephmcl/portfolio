@@ -149,42 +149,70 @@ body {
 	}
 }
 
-.post, .paragraph-section {
+.post-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 0px 0px 0px;
+}
+
+.paragraph-section {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	box-sizing: border-box;
-	word-wrap: break-word;
 	padding: 0px 10px 10px 10px;
-
 }
 
-.post-content, .section-body {
+.post-body, .section-body {
 	font-size: 0.8em;
 	padding-bottom: 5px;
 }
 
-.post-title, .section-title {
+.post-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.section-title {
 	font-size: 1.3em;
 	font-weight: 600;
 	padding-bottom: 5px;
 }
 
-.post a,
-.post a:link,
-.post a:visited,
-.post a:active  {
+.post-section .link-container {
+    height: 1.6em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.post-section a,
+.post-section a:link,
+.post-section a:visited,
+.post-section a:active  {
+    align-self: flex-end;
 	display: inline-block;
 	font-size: 0.8em;
+    font-weight: 600;
 	text-decoration: none;
 	color: inherit;
 	padding: 5px 1em 5px 1em;
+    margin-top: 0.5em;
 	margin-right: 0.5em;
 	border: 1px solid black;
+    width: 100px;
+    text-align: center;
 }
 
-.post a:hover,
-.post a:active {
+.post-section a:hover,
+.post-section a:active {
 	background-color: black;
 	color: white;
 }
@@ -246,10 +274,10 @@ a:active, a:focus {
         box-shadow: 0 0 0 0px rgba(255, 255, 255);
     }
     55% {
-        box-shadow: 0 0 0 0px #036936;
+        box-shadow: 0 0 0 0px #036936; /* sco */
     }
     80% {
-        box-shadow: 0 0 0 0px #FEE11A;
+        box-shadow: 0 0 0 0px #FEE11A; /* ducks */
     }
     75%, 100% {
         box-shadow: 0 0 0 60px rgba(255, 255, 255, 0);

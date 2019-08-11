@@ -1,7 +1,7 @@
 [{
     "type":"paragraph",
-    "title":"Hello",
-    "body":"My name is Joseph. I’m a software engineer and graduate student, currently working on my Master's in Computer and Information Science at The University of Oregon."
+    "title":null,
+    "body":"Hello! My name is Joseph. I’m a software engineer and graduate student, currently working on my Master's in Computer and Information Science at The University of Oregon."
 },{
 "type":"paragraph",
     "title":null,
@@ -9,5 +9,5 @@
 },{
 "type":"paragraph",
     "title":null,
-    "body":"Any other spare time I have I'm dedicating to working on my Peugot 12-speed, cooking, or sleeping (ngl.)"
+    "body":"Any other spare time I have I'm dedicating to working on my Peugot 12-speed, cooking out of <i>La Cuisine de Référence</i>, or sleeping (ngl.)"
 }]
