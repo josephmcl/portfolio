@@ -157,7 +157,20 @@ body {
     box-sizing: border-box;
     border: 1px solid black;
     padding: 10px 10px 10px 10px;
-    margin: 10px 0px 0px 0px;
+    margin: 0px 0px 10px 0px;
+    animation: slide-in 0.5s cubic-bezier(0.66, 0, 0, 1);
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(20px);
+    }
+    40% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
 }
 
 .paragraph-section {
@@ -167,6 +180,12 @@ body {
 	width: 100%;
 	box-sizing: border-box;
 	padding: 0px 10px 10px 10px;
+}
+
+@media only screen and (max-width: 500px) {
+    .content {
+        padding-right: 10px;
+    }
 }
 
 .post-body, .section-body {

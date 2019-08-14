@@ -1,0 +1,9 @@
+[{
+    "type":"post",
+    "title":"Using COM in C# &amp; C++",
+    "body":"Example projects invoking COM in C# and C++. Because programming on Windows is a pain.",
+    "links":[{
+        "title":"View Source",
+        "href":"https://github.com/datalogic/opos-sample"
+    }]
+}]

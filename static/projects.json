@@ -6,4 +6,31 @@
         "title":"View Source",
         "href":"https://github.com/josephmcl/portfolio"
     }]
+},
+{
+    "type":"post",
+    "title":"Quack",
+    "body":"A small statically typed, object oriented language.",
+    "links":[{
+        "title":"View Source",
+        "href":"https://github.com/josephmcl/quack"
+    }]
+},
+{
+    "type":"post",
+    "title":"Polynomial",
+    "body":"A tiny polynomial library written in C.",
+    "links":[{
+        "title":"View Source",
+        "href":"https://github.com/josephmcl/polynomial"
+    }]
+},
+{
+    "type":"post",
+    "title":"Labyrinth",
+    "body":"A circular maze generator made in python.",
+    "links":[{
+        "title":"View Source",
+        "href":"https://github.com/josephmcl/labyrinth"
+    }]
 }]

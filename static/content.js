@@ -47,7 +47,7 @@ const makePostElement = (item) => {
                 let linkElement = document.createElement('a');
                 linkElement.innerHTML = linkJSON['title'];
                 linkElement.href = linkJSON['href'];
-                linkElement.style.width = + String(linkJSON['title'].length * 0.60) + 'em';
+                linkElement.style.width = String(linkJSON['title'].length * 0.60) + 'em';
                 linkContainer.appendChild(linkElement);
             }
         }); 
@@ -60,11 +60,13 @@ export const Content = (id) => {
     const theRoot = document.getElementById(id);
     const theObject = {
         obj: theRoot,
+        delay: 0,
         add: (item) => {
             theObject.obj.innerHTML += item;
         },
         clear : () => {
             theRoot.innerHTML = '';
+            theObject.delay = 0;
         },
         addSection: (item) => {
             if (!item['type']) {
@@ -82,10 +84,18 @@ export const Content = (id) => {
             }
         },
         addParagraph: (item) => {
-            theRoot.appendChild(makeParagraphElement(item));
+            let el = makeParagraphElement(item);
+            el.style.animation = 'slide-in 0.5s cubic-bezier(0.66, 0, 0, 1)';
+            el.style.animationDelay = String(theObject.delay) + 's'
+            theObject.delay += (theObject.delay > 0)? theObject.delay/ 2: 0.03;
+            theRoot.appendChild(el);
         },
         addPost: (item) => {
-            theRoot.appendChild(makePostElement(item)); 
+            let el = makePostElement(item);
+            el.style.animation = 'slide-in 0.5s cubic-bezier(0.66, 0, 0, 1)';
+            el.style.animationDelay = String(theObject.delay) + 's'
+            theObject.delay += (theObject.delay > 0)? theObject.delay/ 2: 0.03;
+            theRoot.appendChild(el); 
         }
     };
     return theObject;
