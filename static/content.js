@@ -60,6 +60,7 @@ export const Content = (id) => {
     const theRoot = document.getElementById(id);
     const theObject = {
         obj: theRoot,
+        map: {},
         delay: 0,
         add: (item) => {
             theObject.obj.innerHTML += item;
@@ -68,16 +69,16 @@ export const Content = (id) => {
             theRoot.innerHTML = '';
             theObject.delay = 0;
         },
-        addSection: (item) => {
+        addSection: (item, to) => {
             if (!item['type']) {
                 return;
             }
             switch (item['type']) {
             case 'paragraph': 
-                theObject.addParagraph(item);
+                theObject.map[to].push(theObject.addParagraph(item));
                 return;
             case 'post': 
-                theObject.addPost(item);
+                theObject.map[to].push(theObject.addPost(item));
                 return;
             default:
                 return;
@@ -88,14 +89,14 @@ export const Content = (id) => {
             el.style.animation = 'slide-in 0.5s cubic-bezier(0.66, 0, 0, 1)';
             el.style.animationDelay = String(theObject.delay) + 's'
             theObject.delay += (theObject.delay > 0)? theObject.delay/ 2: 0.03;
-            theRoot.appendChild(el);
+            return el;
         },
         addPost: (item) => {
             let el = makePostElement(item);
             el.style.animation = 'slide-in 0.5s cubic-bezier(0.66, 0, 0, 1)';
             el.style.animationDelay = String(theObject.delay) + 's'
             theObject.delay += (theObject.delay > 0)? theObject.delay/ 2: 0.03;
-            theRoot.appendChild(el); 
+            return el;
         }
     };
     return theObject;

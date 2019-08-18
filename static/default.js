@@ -75,9 +75,12 @@ const getJSON = async (fileName, res, rej) => {
 const getSectionData = (path) => {
     loadInfo(path).then(json => {
         content.clear();
-        console.log(json);
-        [...JSON.parse(json)].forEach(section => {
-            content.addSection(section);
-        });
+        if (!content.map[path]) {
+            content.map[path] = [];
+            [...JSON.parse(json)].forEach(section => {
+                content.addSection(section, path);
+            });
+        }
+        content.map[path].forEach(el => content.obj.appendChild(el));
     });
 };
