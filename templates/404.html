@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>joseph mclaughlin</title>
+  <meta name="description" content="Joseph's 404 page, go here --> http://josephmcl.me">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+  <meta name="author" content="Joseph McLaughlin">
+  <style>
+  body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Helvetica Neue,Lato,sans-serif;
+  }
+  #exist {
+    position: relative;
+    color: black;
+    width: 200px;
+    text-align: center;
+    padding: 1em 50px 1em 50px;
+    border: 2px solid black;
+  }
+  #exist:hover {
+    background-color: black;
+    color: white;
+  }
+  #exist::before {
+    position: absolute;
+    content: "404";
+    width: 300px;
+    top: calc(-1em - 4px);
+    left: -50%;
+    transform: translateX(50%);
+    text-align: center;
+    letter-spacing: 60px;
+    text-indent: 60px;
+    font-size: 0.5em;
+  }
+  #exist::after {
+    position: absolute;
+    content: "404";
+    width: 300px;
+    bottom: calc(-1em - 4px);
+    left: -50%;
+    transform: translateX(50%);
+    text-align: center;
+    letter-spacing: 60px;
+    text-indent: 60px;
+    font-size: 0.5em;
+  }
+  a {
+    margin-top: 1em;
+    font-style: italic;
+    font-size: 0.8em;
+    color: #006cbf;
+    padding: 2px 1.5em 2px 1.5em;
+  }
+  a:hover, 
+  a:active {
+    color: white;
+    background-color: #006cbf;
+    border-radius: 1em;
+  }
+  </style>
+</head>
+<body>
+  <div id="exist">This page does not exist</div>
+  <a href="http://www.josephmcl.me">Back to... josephmcl.me</a>
+</body>
+</html>
