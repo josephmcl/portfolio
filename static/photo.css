@@ -1,0 +1,112 @@
+body {
+    margin: 0 auto;
+    font-family: Helvetica Neue,Lato,sans-serif;
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    left: 10vw;
+    height: 2em;
+    width: 80vw;
+    background-color: transparent;
+
+    text-decoration: none;
+    color: black;
+
+    border: black 2px solid;
+    border-top: none;
+    text-align: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+    line-height: 1.9em;
+}
+
+.banner:hover, 
+.banner:active,
+.banner:focus {
+    color: white;
+    background-color: black;
+}
+
+.banner:hover::before,
+.banner:active::before,
+.banner:focus::before {
+    position: relative;
+    content: "go home... ";
+    font-size: 0.75em;
+    top: 0;
+    color: white;
+    background-color: black;
+}
+
+.banner::after {
+    position: absolute;
+    content: "Photography";
+    font-size: 0.8em;
+    letter-spacing: 0.3em;
+    font-weight: 600;
+    top: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    color: black;
+}
+
+.photos {
+    position: absolute;
+    top: 10vh;
+    right: 10vw;
+    height: 80vh;
+    width: 80vw;
+    max-width: 500px;
+    background-color: transparent;
+    overflow-y: scroll;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    display: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    max-height: 500px;
+    margin-bottom: 5%;
+}
+
+.loading {
+    position: absolute;
+    top: 10vh;
+    right: 10vw;
+    height: 80vh;
+    width: 80vw;
+    max-width: 500px;
+    background-color: transparent;
+}
+
+.loading::before {
+    position: absolute;
+    content: "";
+    height: 45px;
+    width: 45px;
+    left: 50%;
+    animation-name: dance;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dance {
+  0% { transform: translateX(-150%) translateY(50%) rotateZ(45deg);  
+    background-color: #9965b8;}
+  25% {transform: translateX(50%) translateY(50%) rotateZ(-45deg);
+    background-color: #e63f1e;}
+  50% {transform: translateX(50%) translateY(200%) rotateZ(-120deg);
+    background-color: #decb1f;}
+  75% {transform: translateX(-150%) translateY(200%) rotateZ(-225deg);
+    background-color: #347d4e;}
+  100% {transform: translateX(-150%) translateY(50%) rotateZ(-315deg);
+    background-color: #9965b8;}
+} 

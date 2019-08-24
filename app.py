@@ -6,5 +6,10 @@ def page_not_found(e):
     return render_template('404.html'), 404
 
 @app.route('/')
-def hello_world():
+def index():
     return render_template('index.html')
+
+@app.route('/photography')
+def photo():
+    return render_template('photo.html')
+    
