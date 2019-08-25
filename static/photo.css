@@ -61,6 +61,7 @@ body {
     max-width: 500px;
     background-color: transparent;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 
     display: flex;
     flex-direction: column;
