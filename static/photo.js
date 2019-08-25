@@ -5,10 +5,7 @@ let isLoading = true;
 let stack = [];
 
 window.addEventListener('load', () => {
-    setTimeout(() => {
-        loadPhotos('static/photography/index.json');
-    }, 500);
-    
+    loadPhotos('static/photography/index.json');    
 });
 
 const tryShow = () => {
