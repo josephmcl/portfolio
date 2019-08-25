@@ -7,23 +7,14 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
   <meta name="author" content="Joseph McLaughlin">
   <link rel="stylesheet" href="{{ url_for('static', filename='photo.css', version='1.01') }}">
+  <script type="module" src="{{ url_for('static', filename='photo.js', version='1.01') }}"></script>
 </head>
 <body>
   <a href="/">
     <div class="banner">⇦</div>
   </a>
-  <div class="photos">
-    <img src="/static/photography/1.jpg">
-    <img src="/static/photography/2.jpg">
-    <img src="/static/photography/1.jpg">
-    <img src="/static/photography/2.jpg">
-    <img src="/static/photography/1.jpg">
-    <img src="/static/photography/2.jpg">
-    <img src="/static/photography/1.jpg">
-    <img src="/static/photography/2.jpg">
-    <img src="/static/photography/1.jpg">
-    <img src="/static/photography/2.jpg">
+  <div id="photos">
   </div>
-  <div class="loading"></div>
+  <div id="loading"></div>
 </body>
 </html>
